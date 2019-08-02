@@ -72,14 +72,15 @@ class Bohm:
                 x.append(t)
                 y.append(state[0])
             plot(x,y,color="black")
-            print "Completed trajectory %d completed" % index
+            print("Completed trajectory %d completed" % index)
 
-        print "Completed in %s seconds" % str(time.time() - self.start)
+        print("Completed in %s seconds" % str(time.time() - self.start))
         if self.save: 
-            filename = ("%s/Desktop/%d-bohmian-trajectories-%s.png" % 
-                            (os.path.expanduser("~"), len(self.inits), os.urandom(8).encode('hex')))
+            #filename = ("%s/Desktop/%d-bohmian-trajectories-%s.png" % 
+                            #(os.path.expanduser("~"), len(self.inits), os.urandom(8).encode('hex')))
+            filename = ("%d-bohmian-trajectories.png" % len(self.inits))
             savefig(filename)
-            print "Saved to %s" % filename
+            print("Saved to %s" % filename)
         show()
 
 if __name__ == '__main__':
